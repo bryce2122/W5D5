@@ -18,13 +18,14 @@ class Game {
   }
 
 
-  makeMove() {
+
+
+           makeMove() {
 
     reader.question('Pick a position', function (input) {
-      sum = sum + parseInt(input);
-      numsLeft = numsLeft - 1;
-      console.log(sum);
-      addNumbers(sum, numsLeft, completionCallback);
+      input = input.split(',');
+      let [x,y] = input;
+      this.grid[y][x] == player.mark;
     });
 
 
